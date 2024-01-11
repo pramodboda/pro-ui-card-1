@@ -1,0 +1,166 @@
+/* initial clean up  */
+html {
+  --border-radius: 0.2em;
+  --badge-padding-x: 1em;
+  --badge-padding-y: 0.6em;
+  --badge-font-size: 0.75em;
+  --badge-font-weight: 700;
+  --badge-color: #fff;
+  --badge-border-radius: var(--border-radius);
+  --bottom-gap: 1em;
+  --color-yellow: #f4d04e;
+  --color-grey: #808080;
+  --color-black: #121212;
+  --color-white: #ffffff;
+  --card-border-radius: 1.5em;
+  --transition-2: all 0.2s ease-in-out;
+
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Figtree;
+  src: url(../assets/fonts/Figtree-VariableFont_wght.ttf);
+}
+
+body {
+  margin: 0;
+  background: var(--color-yellow);
+
+  font-family: "Figtree", sans-serif;
+}
+
+p {
+  font-size: 16px;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* common styles  */
+/* .color-yellow {
+  background: #f4d04e;
+}
+
+.color-grey {
+  background: #808080;
+}
+
+.color-black {
+  background: #121212;
+}
+.color-white {
+  background: #ffffff;
+} */
+
+/* card styles  */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+.card {
+  background: #ffffff;
+  width: 380px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 22px;
+  margin-bottom: 2em;
+  border: 1px solid var(--color-black);
+  border-radius: var(--card-border-radius);
+  box-shadow: 10px 10px #000;
+}
+
+.card .post-img {
+  width: 100%;
+  margin-bottom: var(--bottom-gap);
+  height: auto;
+  overflow: hidden;
+}
+.card .post-img img {
+  width: 100%;
+  border-radius: 0.75em;
+}
+
+.badge {
+  display: inline-flex;
+  padding: var(--badge-padding-y) var(--badge-padding-x);
+  font-size: var(--badge-font-size);
+  font-weight: var(--badge-font-weight);
+  line-height: 1;
+  color: var(--color-black);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: var(--badge-border-radius);
+}
+
+.badge.text-bg-primary {
+  color: var(--color-black);
+  background-color: var(--color-yellow) !important;
+}
+
+.card .badge {
+  margin-bottom: var(--bottom-gap);
+}
+.card .post-date {
+  margin-bottom: var(--bottom-gap);
+}
+.card .title {
+  margin-bottom: var(--bottom-gap);
+}
+.card .title a {
+  text-decoration: none;
+  color: var(--color-black);
+  transition: var(--transition-2);
+}
+.card .title a:hover {
+  color: var(--color-yellow);
+}
+.card .description {
+  margin-bottom: 1.5em;
+  color: var(--color-grey);
+}
+
+.card .author {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.9em;
+}
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.author-avatar img {
+  width: 100%;
+}
+
+.author-name {
+  font-weight: 800;
+}
+
+/* mobile view */
+@media (max-width: 576px) {
+  .card {
+    width: 325px;
+  }
+}
